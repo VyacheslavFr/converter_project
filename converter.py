@@ -22,7 +22,7 @@ class Ui_Converter(object):
     def setupUi(self, Converter):
         if not Converter.objectName():
             Converter.setObjectName(u"Converter")
-        Converter.resize(751, 194)
+        Converter.resize(737, 199)
         Converter.setStyleSheet(u"QWidget#Converter {background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #DCDCDC, stop:1 #75DBA4);\n"
 "width: 200px;\n"
 "}\n"
@@ -30,6 +30,9 @@ class Ui_Converter(object):
         self.currency_picker = QComboBox(Converter)
         self.currency_picker.setObjectName(u"currency_picker")
         self.currency_picker.setGeometry(QRect(70, 40, 371, 22))
+        font = QFont()
+        font.setPointSize(10)
+        self.currency_picker.setFont(font)
         self.currency_picker.setCursor(QCursor(Qt.PointingHandCursor))
         self.currency_picker.setStyleSheet(u"QComboBox{\n"
 "background-color:#D3CE9B;\n"
@@ -101,6 +104,7 @@ class Ui_Converter(object):
         self.currency_picker_2.setObjectName(u"currency_picker_2")
         self.currency_picker_2.setEnabled(False)
         self.currency_picker_2.setGeometry(QRect(70, 130, 371, 22))
+        self.currency_picker_2.setFont(font)
         self.currency_picker_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.currency_picker_2.setStyleSheet(u"QComboBox{\n"
 "background-color:#D3CE9B;\n"
@@ -170,23 +174,23 @@ class Ui_Converter(object):
 "}")
         self.currency_2_rate = QLabel(Converter)
         self.currency_2_rate.setObjectName(u"currency_2_rate")
-        self.currency_2_rate.setGeometry(QRect(460, 30, 271, 81))
-        font = QFont()
-        font.setPointSize(16)
-        self.currency_2_rate.setFont(font)
+        self.currency_2_rate.setGeometry(QRect(460, 10, 281, 81))
+        font1 = QFont()
+        font1.setPointSize(16)
+        self.currency_2_rate.setFont(font1)
         self.currency_2_rate.setAlignment(Qt.AlignCenter)
         self.currency_2_rate.setWordWrap(True)
         self.more_block = QGroupBox(Converter)
         self.more_block.setObjectName(u"more_block")
         self.more_block.setGeometry(QRect(20, 210, 721, 291))
-        font1 = QFont()
-        font1.setPointSize(18)
-        self.more_block.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(18)
+        self.more_block.setFont(font2)
         self.more_block.setStyleSheet(u"border: 0;")
         self.USD_name = QLabel(self.more_block)
         self.USD_name.setObjectName(u"USD_name")
         self.USD_name.setGeometry(QRect(80, 250, 200, 30))
-        self.USD_name.setFont(font)
+        self.USD_name.setFont(font1)
         self.USD_name.setStyleSheet(u"QLabel {\n"
 "padding-left: 20px;\n"
 "padding-bottom: 3px;\n"
@@ -200,7 +204,7 @@ class Ui_Converter(object):
         self.Yen_name = QLabel(self.more_block)
         self.Yen_name.setObjectName(u"Yen_name")
         self.Yen_name.setGeometry(QRect(80, 130, 200, 30))
-        self.Yen_name.setFont(font)
+        self.Yen_name.setFont(font1)
         self.Yen_name.setStyleSheet(u"QLabel {\n"
 "padding-left: 20px;\n"
 "padding-bottom: 3px;\n"
@@ -214,7 +218,7 @@ class Ui_Converter(object):
         self.Euro_name = QLabel(self.more_block)
         self.Euro_name.setObjectName(u"Euro_name")
         self.Euro_name.setGeometry(QRect(80, 190, 200, 30))
-        self.Euro_name.setFont(font)
+        self.Euro_name.setFont(font1)
         self.Euro_name.setStyleSheet(u"QLabel {\n"
 "padding-left: 20px;\n"
 "padding-bottom: 3px;\n"
@@ -228,7 +232,7 @@ class Ui_Converter(object):
         self.Pound_name = QLabel(self.more_block)
         self.Pound_name.setObjectName(u"Pound_name")
         self.Pound_name.setGeometry(QRect(80, 10, 200, 30))
-        self.Pound_name.setFont(font)
+        self.Pound_name.setFont(font1)
         self.Pound_name.setStyleSheet(u"QLabel {\n"
 "padding-left: 20px;\n"
 "padding-bottom: 3px;\n"
@@ -242,7 +246,7 @@ class Ui_Converter(object):
         self.Yuan_name = QLabel(self.more_block)
         self.Yuan_name.setObjectName(u"Yuan_name")
         self.Yuan_name.setGeometry(QRect(80, 70, 200, 30))
-        self.Yuan_name.setFont(font)
+        self.Yuan_name.setFont(font1)
         self.Yuan_name.setStyleSheet(u"QLabel {\n"
 "padding-left: 20px;\n"
 "padding-bottom: 3px;\n"
@@ -256,34 +260,46 @@ class Ui_Converter(object):
         self.Yen_rate = QLabel(self.more_block)
         self.Yen_rate.setObjectName(u"Yen_rate")
         self.Yen_rate.setGeometry(QRect(550, 130, 151, 30))
-        self.Yen_rate.setFont(font)
+        font3 = QFont()
+        font3.setPointSize(16)
+        font3.setBold(True)
+        self.Yen_rate.setFont(font3)
+        self.Yen_rate.setStyleSheet(u"color: #313131;\n"
+"")
         self.Yen_rate.setAlignment(Qt.AlignCenter)
         self.USD_rate = QLabel(self.more_block)
         self.USD_rate.setObjectName(u"USD_rate")
         self.USD_rate.setGeometry(QRect(550, 250, 151, 30))
-        self.USD_rate.setFont(font)
+        self.USD_rate.setFont(font3)
+        self.USD_rate.setStyleSheet(u"color: #313131;\n"
+"")
         self.USD_rate.setAlignment(Qt.AlignCenter)
         self.Pound_rate = QLabel(self.more_block)
         self.Pound_rate.setObjectName(u"Pound_rate")
         self.Pound_rate.setGeometry(QRect(550, 10, 151, 30))
-        self.Pound_rate.setFont(font)
+        self.Pound_rate.setFont(font3)
+        self.Pound_rate.setStyleSheet(u"color: #313131;")
         self.Pound_rate.setAlignment(Qt.AlignCenter)
         self.Yuan_rate = QLabel(self.more_block)
         self.Yuan_rate.setObjectName(u"Yuan_rate")
         self.Yuan_rate.setGeometry(QRect(550, 70, 151, 30))
-        self.Yuan_rate.setFont(font)
+        self.Yuan_rate.setFont(font3)
+        self.Yuan_rate.setStyleSheet(u"color: #313131;\n"
+"")
         self.Yuan_rate.setAlignment(Qt.AlignCenter)
         self.Euro_rate = QLabel(self.more_block)
         self.Euro_rate.setObjectName(u"Euro_rate")
         self.Euro_rate.setGeometry(QRect(550, 190, 151, 30))
-        self.Euro_rate.setFont(font)
+        self.Euro_rate.setFont(font3)
+        self.Euro_rate.setStyleSheet(u"color: #313131;\n"
+"")
         self.Euro_rate.setAlignment(Qt.AlignCenter)
         self.Pound_icon = QLabel(self.more_block)
         self.Pound_icon.setObjectName(u"Pound_icon")
         self.Pound_icon.setGeometry(QRect(50, 0, 50, 50))
-        font2 = QFont()
-        font2.setPointSize(25)
-        self.Pound_icon.setFont(font2)
+        font4 = QFont()
+        font4.setPointSize(25)
+        self.Pound_icon.setFont(font4)
         self.Pound_icon.setStyleSheet(u"QLabel {\n"
 "background-color: #D3CE9B;\n"
 "border-radius: 25px;\n"
@@ -296,7 +312,7 @@ class Ui_Converter(object):
         self.Yuan_icon = QLabel(self.more_block)
         self.Yuan_icon.setObjectName(u"Yuan_icon")
         self.Yuan_icon.setGeometry(QRect(50, 60, 50, 50))
-        self.Yuan_icon.setFont(font2)
+        self.Yuan_icon.setFont(font4)
         self.Yuan_icon.setStyleSheet(u"QLabel {\n"
 "background-color: #D3CE9B;\n"
 "border-radius: 25px;\n"
@@ -309,7 +325,7 @@ class Ui_Converter(object):
         self.Yen_icon = QLabel(self.more_block)
         self.Yen_icon.setObjectName(u"Yen_icon")
         self.Yen_icon.setGeometry(QRect(50, 120, 50, 50))
-        self.Yen_icon.setFont(font2)
+        self.Yen_icon.setFont(font4)
         self.Yen_icon.setStyleSheet(u"QLabel {\n"
 "background-color: #D3CE9B;\n"
 "border-radius: 25px;\n"
@@ -322,7 +338,7 @@ class Ui_Converter(object):
         self.Euro_icon = QLabel(self.more_block)
         self.Euro_icon.setObjectName(u"Euro_icon")
         self.Euro_icon.setGeometry(QRect(50, 180, 50, 50))
-        self.Euro_icon.setFont(font2)
+        self.Euro_icon.setFont(font4)
         self.Euro_icon.setStyleSheet(u"QLabel {\n"
 "background-color: #D3CE9B;\n"
 "border-radius: 25px;\n"
@@ -336,7 +352,7 @@ class Ui_Converter(object):
         self.USD_icon = QLabel(self.more_block)
         self.USD_icon.setObjectName(u"USD_icon")
         self.USD_icon.setGeometry(QRect(50, 240, 50, 50))
-        self.USD_icon.setFont(font2)
+        self.USD_icon.setFont(font4)
         self.USD_icon.setStyleSheet(u"QLabel {\n"
 "background-color: #D3CE9B;\n"
 "border-radius: 25px;\n"
@@ -348,7 +364,8 @@ class Ui_Converter(object):
         self.USD_icon.setAlignment(Qt.AlignCenter)
         self.more_btn = QPushButton(Converter)
         self.more_btn.setObjectName(u"more_btn")
-        self.more_btn.setGeometry(QRect(580, 130, 161, 24))
+        self.more_btn.setGeometry(QRect(500, 130, 161, 24))
+        self.more_btn.setFont(font)
         self.more_btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.more_btn.setStyleSheet(u"QPushButton{\n"
 "background-color:#D3CE9B;\n"

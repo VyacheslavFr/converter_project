@@ -74,12 +74,12 @@ class Window(QDialog, Ui_Converter):
         self.anim_2 = QPropertyAnimation(effect, b"opacity")
         self.anim_2.setDuration(1000)
         if self.more_btn.isChecked():
-            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() + 400))
+            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() + 350))
             self.anim_2.setStartValue(0)
             self.anim_2.setEndValue(1)
         else:
             self.anim.setDuration(500)
-            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() - 400))
+            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() - 350))
             self.anim_2.setStartValue(1)
             self.anim_2.setEndValue(0)
         self.anim.start()

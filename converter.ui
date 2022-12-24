@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>751</width>
-    <height>194</height>
+    <width>737</width>
+    <height>199</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,6 +27,11 @@ width: 200px;
      <width>371</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
@@ -114,6 +119,11 @@ background-color:#AEA76B;
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
@@ -192,8 +202,8 @@ background-color:#AEA76B;
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>30</y>
-     <width>271</width>
+     <y>10</y>
+     <width>281</width>
      <height>81</height>
     </rect>
    </property>
@@ -404,7 +414,12 @@ border-color: #AEA86B;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #313131;
+</string>
     </property>
     <property name="text">
      <string>?</string>
@@ -425,7 +440,12 @@ border-color: #AEA86B;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #313131;
+</string>
     </property>
     <property name="text">
      <string>?</string>
@@ -446,7 +466,11 @@ border-color: #AEA86B;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #313131;</string>
     </property>
     <property name="text">
      <string>?</string>
@@ -467,7 +491,12 @@ border-color: #AEA86B;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #313131;
+</string>
     </property>
     <property name="text">
      <string>?</string>
@@ -488,7 +517,12 @@ border-color: #AEA86B;
     <property name="font">
      <font>
       <pointsize>16</pointsize>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #313131;
+</string>
     </property>
     <property name="text">
      <string>?</string>
@@ -657,11 +691,16 @@ padding-bottom: 2px;
   <widget class="QPushButton" name="more_btn">
    <property name="geometry">
     <rect>
-     <x>580</x>
+     <x>500</x>
      <y>130</y>
      <width>161</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
