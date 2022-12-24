@@ -1,4 +1,5 @@
 import sys
+import time
 
 from PySide6.QtCore import *
 from PySide6.QtGui import *
@@ -6,7 +7,6 @@ from PySide6.QtWidgets import QApplication, QDialog, QMainWindow, QPushButton, Q
     QGraphicsOpacityEffect
 from converter import Ui_Converter
 from data_refiner import currency_names, currency_refined_data
-
 
 
 class Window(QDialog, Ui_Converter):
@@ -17,14 +17,13 @@ class Window(QDialog, Ui_Converter):
         super().__init__()
         self.setupUi(self)
         self.currency_picker.setMaxCount(1000)
-        self.currency_picker.setPlaceholderText('Выберите валюту')
-        self.currency_picker_2.setPlaceholderText('Выберите валюту')
         for item in currency_names:
             self.currency_picker.addItem(item)
             self.currency_picker_2.addItem(item)
         self.currency_picker.currentIndexChanged.connect(self.currency_chosen)
         self.currency_picker_2.currentIndexChanged.connect(self.currency_2_chosen)
         self.more_btn.toggled.connect(self.more_btn_clicked)
+        self.setWindowIcon(QIcon('icon.png'))
 
     def currency_chosen(self):
         chosen_currency_name = self.currency_picker.currentText()
@@ -56,14 +55,38 @@ class Window(QDialog, Ui_Converter):
         currency_base = self.currency_picker.currentText()
         currency_base_data = currency_refined_data[currency_base]
         currency_base_rate = float(currency_base_data[-1])
-        self.currency_2_rate.setText(str(format(chosen_currency_rate / currency_base_rate / int(chosen_currency_data[2]), '.4f')))
+        rate_output = str(format(chosen_currency_rate / currency_base_rate / int(chosen_currency_data[2]), '.4f'))
+        self.currency_2_rate.setText(f'1 {currency_base_data[1]} равен {rate_output} {chosen_currency_data[1]}')
+
+        font_name = self.currency_2_rate.font().key().split(',')[0]
+        self.currency_2_rate.setFont(QFont(font_name, 16))
 
     def more_btn_clicked(self):
+        self.more_btn.setWindowOpacity(0)
+        self.child = self
+        self.anim = QPropertyAnimation(self.child, b'size')
+        self.anim.setDuration(1000)
+        self.anim.setEasingCurve(QEasingCurve.OutBounce)
+        self.anim.setStartValue(QSize(self.child.size().width(), self.child.size().height()))
+        self.child_2 = self.more_block
+        effect = QGraphicsOpacityEffect(self.child_2)
+        self.child_2.setGraphicsEffect(effect)
+        self.anim_2 = QPropertyAnimation(effect, b"opacity")
+        self.anim_2.setDuration(1000)
         if self.more_btn.isChecked():
-            print('развёрнуто')
-            self.child = self
+            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() + 400))
+            self.anim_2.setStartValue(0)
+            self.anim_2.setEndValue(1)
         else:
-            print('свёрнуто')
+            self.anim.setDuration(500)
+            self.anim.setEndValue(QSize(self.child.size().width(), self.child.size().height() - 400))
+            self.anim_2.setStartValue(1)
+            self.anim_2.setEndValue(0)
+        self.anim.start()
+        self.anim_2.start()
+
+
+
 
 
 
